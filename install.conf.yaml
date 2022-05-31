@@ -6,11 +6,11 @@
 
 - link:
     ~/.zshrc: zshrc
+    ~/.gitconfig: gitconfig
 #    ~/.vimrc: vimrc
 
 - create:
    -  ~/Work
-
 
 # - shell:
 #  - [git submodule update --init --recursive, Installing submodules]
