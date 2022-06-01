@@ -1,19 +1,14 @@
-# Taps
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-
-# Brews (Packages)
 brew "bat"
+brew "exa"
 brew "git"
 brew "go"
 brew "httpie"
 brew "poetry"
 brew "pyenv"
 brew "wget"
-brew "exa"
-
-# Casks (Applications)
 cask "1password"
 cask "alfred"
 cask "docker"
