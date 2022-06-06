@@ -11,6 +11,8 @@ brew "git"
 brew "go"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# Mac App Store command-line interface
+brew "mas"
 # Python package management tool
 brew "poetry"
 # Python version management
@@ -23,6 +25,8 @@ cask "1password"
 cask "alfred"
 # App to build and share containerized applications and microservices
 cask "docker"
+# Client for the Dropbox cloud storage service
+cask "dropbox"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
 # Provides updates to various Microsoft products
@@ -33,3 +37,10 @@ cask "microsoft-edge"
 cask "skype"
 # Open-source code editor
 cask "visual-studio-code"
+mas "Bear", id: 1091189122
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Snappy", id: 512617038
