@@ -6,6 +6,7 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 # Aliases
 
 alias ls='ls -lAFh'
+alias exa='exa -laFh --git'
 
 # Customized prompts
 
