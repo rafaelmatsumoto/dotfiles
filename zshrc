@@ -20,5 +20,11 @@ function mkcd() {
 
 # $PATH variables
 
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 export PATH="/Users/rafaelmatsumoto/.pyenv/shims:${PATH}"
 eval "$(pyenv init -)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
