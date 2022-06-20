@@ -11,6 +11,8 @@ brew "git"
 brew "go"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# Terminal Client for Redis with AutoCompletion and Syntax Highlighting
+brew "iredis"
 # Mac App Store command-line interface
 brew "mas"
 # Python package management tool
@@ -19,14 +21,16 @@ brew "poetry"
 brew "pyenv"
 # Internet file retriever
 brew "wget"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Application launcher and productivity software
 cask "alfred"
 # App to build and share containerized applications and microservices
 cask "docker"
-# Client for the Dropbox cloud storage service
-cask "dropbox"
+# HTTP and GraphQL Client
+cask "insomnia"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
 # Provides updates to various Microsoft products
@@ -37,10 +41,7 @@ cask "microsoft-edge"
 cask "skype"
 # Open-source code editor
 cask "visual-studio-code"
+# Video communication and virtual meeting platform
+cask "zoom"
 mas "Bear", id: 1091189122
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Snappy", id: 512617038
