@@ -27,6 +27,8 @@ brew "poetry"
 brew "pyenv"
 # Internet file retriever
 brew "wget"
+# UNIX shell (command interpreter)
+brew "zsh"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # Password manager that keeps all passwords secure behind one password
@@ -51,4 +53,3 @@ cask "visual-studio-code"
 cask "zoom"
 mas "Bear", id: 1091189122
 mas "Snappy", id: 512617038
-
