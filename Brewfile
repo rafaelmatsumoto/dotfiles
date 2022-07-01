@@ -17,6 +17,8 @@ brew "go"
 brew "httpie"
 # Terminal Client for Redis with AutoCompletion and Syntax Highlighting
 brew "iredis"
+# Pager program similar to more
+brew "less"
 # Mac App Store command-line interface
 brew "mas"
 # Python package management tool
@@ -49,3 +51,4 @@ cask "visual-studio-code"
 cask "zoom"
 mas "Bear", id: 1091189122
 mas "Snappy", id: 512617038
+
