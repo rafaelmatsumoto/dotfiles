@@ -5,8 +5,9 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 
 # Aliases
 
-alias ls='ls -lAFh'
-alias exa='exa -laFh --git'
+alias l='exa -laFh --git'
+alias vim='nvim'
+alias cat="bat"
 alias bbd='brew bundle dump --force --describe --verbose'
 alias trail='<<<${(F)path}'
 

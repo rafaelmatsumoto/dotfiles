@@ -8,10 +8,15 @@
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
     ~/.gitconfig: gitconfig
-#    ~/.vimrc: vimrc
     ~/.config/bat:
       create: true
       path: config/bat
+    ~/.config/nvim:
+      create: true
+      path: config/nvim
+    ~/.config/iterm2-config:
+      create: true
+      path: config/iterm2-config
 
 - create:
    -  ~/Work
