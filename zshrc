@@ -1,5 +1,6 @@
 # Environment variables
 
+export ZPLUG_HOME="/opt/homebrew/opt/zplug"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 
@@ -24,6 +25,12 @@ function mkcd() {
 # $PATH variables
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZPLUG_HOME/init.zsh
+
+zplug "themes/candy", from:oh-my-zsh, as:theme
+zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:3
+
+zplug load
 
 export PATH="/Users/rafaelmatsumoto/.pyenv/shims:${PATH}"
 eval "$(pyenv init -)"

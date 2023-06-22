@@ -8,6 +8,9 @@
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
     ~/.gitconfig: gitconfig
+    ~/.zplug:
+      create: true
+      path: zplug
     ~/.config/bat:
       create: true
       path: config/bat
