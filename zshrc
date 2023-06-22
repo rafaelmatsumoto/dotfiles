@@ -14,8 +14,6 @@ alias trail='<<<${(F)path}'
 
 # Customized prompts
 
-RPROMPT='%*'
-
 # ZSH Functions
 
 function mkcd() {
@@ -25,10 +23,21 @@ function mkcd() {
 # $PATH variables
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zplug configuration
+
 source $ZPLUG_HOME/init.zsh
 
 zplug "themes/candy", from:oh-my-zsh, as:theme
 zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:3
+
+# Actually install plugins, prompt user input
+if ! zplug check --verbose; then
+    printf "Install zplug plugins? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 
 zplug load
 
