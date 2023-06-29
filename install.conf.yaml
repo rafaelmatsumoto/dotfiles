@@ -8,6 +8,7 @@
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
     ~/.gitconfig: gitconfig
+    ~/.tmux.conf: tmux.conf
     ~/.zplug:
       create: true
       path: zplug
