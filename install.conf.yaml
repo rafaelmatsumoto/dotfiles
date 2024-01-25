@@ -12,6 +12,9 @@
     ~/.zplug:
       create: true
       path: zplug
+    ~/.tmux:
+      create: true
+      path: tmux
     ~/.config/bat:
       create: true
       path: config/bat
