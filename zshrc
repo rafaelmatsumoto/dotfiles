@@ -1,3 +1,7 @@
+# Misc
+
+setopt autocd
+
 # Environment variables
 
 export ZPLUG_HOME="/opt/homebrew/opt/zplug"
