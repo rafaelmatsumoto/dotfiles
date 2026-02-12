@@ -10,7 +10,7 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 
 # Aliases
 
-alias l='exa -laFh --git'
+alias l='eza -laFh --git'
 alias vim='nvim'
 alias cat="bat"
 alias bbd='brew bundle dump --force --describe --verbose'
