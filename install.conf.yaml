@@ -9,6 +9,7 @@
     ~/.zshenv: zshenv
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
+    ~/.ssh/config: config/ssh/config
     ~/.zplug:
       create: true
       path: zplug
@@ -24,15 +25,11 @@
     ~/.config/iterm2-config:
       create: true
       path: config/iterm2-config
-    ~/.gnupg/gpg.conf: gpg/gpg.conf
-    ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
 
 - create:
    -  ~/Work
 
 - shell:
-    - command: mkdir -p ~/.gnupg && chmod 700 ~/.gnupg
-      description: "Ensure GPG directory permissions"
     - command: ./setup_homebrew.zsh
       stdout: true
       stderr: true
