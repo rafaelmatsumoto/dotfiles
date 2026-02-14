@@ -19,6 +19,8 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Audit git repos for secrets
+brew "gitleaks"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # User-friendly cURL replacement (command-line HTTP client)
@@ -41,6 +43,8 @@ brew "neofetch"
 brew "neovim"
 # Python package management tool
 brew "poetry"
+# Framework for managing multi-language pre-commit hooks
+brew "pre-commit"
 # Python version management
 brew "pyenv"
 # Search tool like grep and The Silver Searcher

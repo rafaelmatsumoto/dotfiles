@@ -1,1 +1,25 @@
 Brewfile.lock.json
+
+# Secrets and personal configuration
+.zshenv.local
+.zshenv.local.*
+.env
+.secrets
+*.secret
+config/secrets/
+
+# Keep the template versioned, but ignore any actual secret files
+!.zshenv.local.template
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+
+# Ignore tmux plugins, but keep the folder structure if needed
+tmux/plugins/*
+# Exception: You can ignore everything *except* the .gitkeep if you have one
+# !tmux/plugins/.gitkeep
