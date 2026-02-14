@@ -1,8 +1,12 @@
 [user]
 	name = Rafael Matsumoto
 	email = 37717679+rafaelmatsumoto@users.noreply.github.com
-	signingkey = 7CED57D555F0CCC1
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFsWqYp0QoV3/u2f8Ys5AeNHArEBYzBMOphBk24j0Hzj GitHub
 [init]
 	defaultBranch = main
 [commit]
 	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
