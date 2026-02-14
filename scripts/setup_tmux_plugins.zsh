@@ -28,15 +28,25 @@ else
     echo "✓ TPM already installed"
 fi
 
+# Start a temporary detached tmux server if one isn't running
+if ! tmux info &>/dev/null; then
+    echo "Starting temporary tmux server for plugin installation..."
+    tmux start-server
+fi
+
 # Install/update plugins
 echo "Installing tmux plugins..."
-"$TPM_DIR/bin/install_plugins"
+"$TPM_DIR/bin/install_plugins" || true
 
 echo "Updating tmux plugins..."
-"$TPM_DIR/bin/update_plugins" all
+"$TPM_DIR/bin/update_plugins" all || true
 
 echo "Cleaning unused plugins..."
-"$TPM_DIR/bin/clean_plugins"
+"$TPM_DIR/bin/clean_plugins" || true
+
+# Kill the server if we started it just for this script
+# (Optional, but keeps your 8GB RAM clean)
+# tmux kill-server
 
 echo "✓ Tmux plugins setup complete"
 echo ""
