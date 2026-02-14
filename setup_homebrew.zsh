@@ -1,12 +1,27 @@
 #!/usr/bin/env zsh
 
+set -e
+
 echo "\n<<< Starting Homebrew Setup >>>\n"
 
-if exists brew; then
-    echo "brew exists, skipping install"
+if command -v brew &>/dev/null; then
+    echo "✓ Homebrew already installed"
 else
-    echo "brew doesn't exists, continuing with install"
+    echo "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    
+    if command -v brew &>/dev/null; then
+        echo "✓ Homebrew installed successfully"
+    else
+        echo "✗ Homebrew installation failed" >&2
+        exit 1
+    fi
 fi
 
-brew bundle --verbose
+echo "Installing packages from Brewfile..."
+if brew bundle --verbose; then
+    echo "✓ Brew bundle completed successfully"
+else
+    echo "✗ Brew bundle failed" >&2
+    exit 1
+fi

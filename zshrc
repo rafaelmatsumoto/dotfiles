@@ -10,11 +10,12 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 
 # Aliases
 
-alias l='eza -laFh --git'
+alias l='eza -la --classify --git'
 alias vim='nvim'
 alias cat="bat"
 alias bbd='brew bundle dump --force --describe --verbose'
 alias trail='<<<${(F)path}'
+alias notes='~/.dotfiles/scripts/notes'
 
 # Customized prompts
 

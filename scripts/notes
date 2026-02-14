@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# Open personal notes and cheatsheet
+
+set -e
+
+NOTES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+echo "Available notes:"
+echo "1. PERSONAL_NOTES.md - Detailed instructions and workflows"
+echo "2. CHEATSHEET.md - Quick reference cheatsheet"
+echo "3. SETUP_SECRETS.md - Secrets setup guide"
+echo "4. README.md - Main documentation"
+echo ""
+echo "Select option (1-4) or 'a' for all: "
+
+read -r choice
+
+case $choice in
+    1)
+        if command -v bat &>/dev/null; then
+            bat "$NOTES_DIR/PERSONAL_NOTES.md"
+        else
+            cat "$NOTES_DIR/PERSONAL_NOTES.md"
+        fi
+        ;;
+    2)
+        if command -v bat &>/dev/null; then
+            bat "$NOTES_DIR/CHEATSHEET.md"
+        else
+            cat "$NOTES_DIR/CHEATSHEET.md"
+        fi
+        ;;
+    3)
+        if command -v bat &>/dev/null; then
+            bat "$NOTES_DIR/SETUP_SECRETS.md"
+        else
+            cat "$NOTES_DIR/SETUP_SECRETS.md"
+        fi
+        ;;
+    4)
+        if command -v bat &>/dev/null; then
+            bat "$NOTES_DIR/README.md"
+        else
+            cat "$NOTES_DIR/README.md"
+        fi
+        ;;
+    a|A)
+        echo "=== PERSONAL_NOTES.md ==="
+        cat "$NOTES_DIR/PERSONAL_NOTES.md"
+        echo ""
+        echo "=== CHEATSHEET.md ==="
+        cat "$NOTES_DIR/CHEATSHEET.md"
+        ;;
+    *)
+        echo "Invalid choice"
+        exit 1
+        ;;
+esac

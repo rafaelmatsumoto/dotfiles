@@ -1,0 +1,104 @@
+# Personal Environment Variables & Secrets
+# =========================================
+# Copy this file to ~/.zshenv.local and fill in your values
+# This file is NOT version controlled (see .gitignore)
+
+# Git Configuration
+# -----------------
+# export GIT_USER_NAME="Your Name"
+# export GIT_USER_EMAIL="your.email@example.com"
+
+# GitHub Personal Access Token
+# Required for: GitHub CLI, API access, private repos
+# export GITHUB_TOKEN="ghp_..."
+
+# OpenAI API Key
+# Required for: OpenAI CLI, ChatGPT integrations
+# export OPENAI_API_KEY="sk-..."
+
+# AWS Credentials
+# Required for: AWS CLI, SDKs, Terraform
+# export AWS_ACCESS_KEY_ID="AKIA..."
+# export AWS_SECRET_ACCESS_KEY="..."
+# export AWS_DEFAULT_REGION="us-east-1"
+# export AWS_PROFILE="default"
+
+# Docker Hub / Container Registry
+# export DOCKER_USERNAME="yourusername"
+# export DOCKER_PASSWORD="..."
+
+# npm / Node.js
+# export NPM_TOKEN="..."
+# export NODE_AUTH_TOKEN="..."
+
+# Python / PyPI
+# export TWINE_USERNAME="__token__"
+# export TWINE_PASSWORD="pypi-..."
+
+# RubyGems
+# export GEM_HOST_API_KEY="..."
+
+# Go / GOPROXY
+# export GOPROXY_TOKEN="..."
+
+# Heroku
+# export HEROKU_API_KEY="..."
+
+# DigitalOcean
+# export DIGITALOCEAN_TOKEN="..."
+
+# Google Cloud
+# export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json"
+# export GOOGLE_CLOUD_PROJECT="your-project-id"
+
+# Azure
+# export AZURE_SUBSCRIPTION_ID="..."
+# export AZURE_TENANT_ID="..."
+# export AZURE_CLIENT_ID="..."
+# export AZURE_CLIENT_SECRET="..."
+
+# HashiCorp Vault
+# export VAULT_ADDR="https://vault.example.com"
+# export VAULT_TOKEN="..."
+
+# SSH Agent
+# export SSH_AUTH_SOCK="$HOME/.ssh/agent.sock"
+
+# GPG
+# export GPG_TTY=$(tty)
+
+# Custom PATH additions
+# export PATH="$HOME/.local/bin:$PATH"
+# export PATH="$HOME/go/bin:$PATH"
+# export PATH="$HOME/.cargo/bin:$PATH"
+
+# Language-specific environment variables
+# export JAVA_HOME="$(/usr/libexec/java_home)"
+# export ANDROID_HOME="$HOME/Library/Android/sdk"
+# export FLUTTER_ROOT="$HOME/flutter"
+
+# Development tool configurations
+# export EDITOR="nvim"
+# export VISUAL="nvim"
+# export BROWSER="open"
+
+# Proxy settings (if needed)
+# export http_proxy="http://proxy.example.com:8080"
+# export https_proxy="http://proxy.example.com:8080"
+# export no_proxy="localhost,127.0.0.1,.local"
+
+# Custom aliases or functions for secrets
+# function aws-login() {
+#     aws sso login --profile "$1"
+# }
+
+# function gh-auth() {
+#     gh auth login --with-token < ~/.github/token
+# }
+
+# Notes:
+# 1. Use quotes around values with special characters
+# 2. Never commit this file or any file containing actual secrets
+# 3. Consider using a password manager for sensitive values
+# 4. Rotate tokens regularly (every 90 days for GitHub tokens)
+# 5. Use least-privilege principles for API keys
