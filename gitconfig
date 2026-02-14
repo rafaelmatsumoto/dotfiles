@@ -1,5 +1,8 @@
 [user]
-	name = rafaelmatsumoto
+	name = Rafael Matsumoto
 	email = 37717679+rafaelmatsumoto@users.noreply.github.com
+	signingkey = 7CED57D555F0CCC1
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true

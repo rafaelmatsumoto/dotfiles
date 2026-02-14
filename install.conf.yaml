@@ -24,25 +24,27 @@
     ~/.config/iterm2-config:
       create: true
       path: config/iterm2-config
+    ~/.gnupg/gpg.conf: gpg/gpg.conf
+    ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
 
 - create:
    -  ~/Work
 
 - shell:
-   -
-    command: ./setup_homebrew.zsh
-    stdout: true
-    stderr: true
-    description: "Install Homebrew and packages"
-   -
-    command: ./setup_zsh.zsh
-    stdout: true
-    stderr: true
-    description: "Configure Zsh as default shell"
-   -
-    command: ./scripts/setup_tmux_plugins.zsh
-    stdout: true
-    stderr: true
-    description: "Install Tmux plugins"
-    if: '[ -f ~/.tmux.conf ]'
-
+    - command: mkdir -p ~/.gnupg && chmod 700 ~/.gnupg
+      description: "Ensure GPG directory permissions"
+    - command: ./setup_homebrew.zsh
+      stdout: true
+      stderr: true
+      description: "Install Homebrew and packages"
+    - command: ./setup_zsh.zsh
+      stdout: true
+      stderr: true
+      description: "Configure Zsh as default shell"
+    - command: ./scripts/setup_tmux_plugins.zsh
+      stdout: true
+      stderr: true
+      description: "Install Tmux plugins"
+      if: '[ -f ~/.tmux.conf ]'
+    - command: nvim --headless "+Lazy! sync" +qa
+      description: "Syncing Neovim plugins and compiling LuaSnip"
