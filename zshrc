@@ -59,3 +59,24 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Git Worktree + Tmux Orchestrator
+work() {
+    local branch_name=$1
+    # This puts worktrees in a folder next to your main 'perigee' folder
+    local worktree_path="../worktrees/$branch_name"
+
+    if [ -z "$branch_name" ]; then
+        echo "Usage: work <branch-name>"
+        return 1
+    fi
+
+    echo "Creating branch and worktree for: $branch_name"
+    
+    # 1. Create the branch and the worktree folder
+    git worktree add -b "$branch_name" "$worktree_path"
+
+    # 2. Open a new tmux window, name it, and start OpenCode
+    # We use 'C-a' because of your specific tmux.conf mapping
+    tmux new-window -n "OC-$branch_name" -c "$worktree_path" "opencode"
+}
