@@ -147,9 +147,6 @@ Or in tmux:
 
 ### Templates & Documentation
 - **`.zshenv.local.template`** - Template for personal secrets (API keys, etc.)
-- **`PERSONAL_NOTES.md`** - Personal workflows and instructions
-- **`CHEATSHEET.md`** - Quick reference guide
-- **`SETUP_SECRETS.md`** - Detailed secrets setup guide
 - **`AGENTS.md`** - AI agent configuration and workflows
 
 ## Customization
@@ -237,9 +234,6 @@ User details are in `gitconfig` - update with your information:
 This repository includes a personal notes system for storing workflows, reminders, and instructions:
 
 ### Available Documentation
-- **`PERSONAL_NOTES.md`** - Detailed personal workflows and instructions
-- **`CHEATSHEET.md`** - Quick reference for commands and key bindings
-- **`SETUP_SECRETS.md`** - Complete guide for secrets management
 - **`AGENTS.md`** - AI agent configuration and workflows
 
 ### Access Notes
