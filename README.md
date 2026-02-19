@@ -109,6 +109,7 @@ Or in tmux:
 ├── install.conf.yaml          # Dotbot configuration
 ├── README.md                  # This file
 ├── SETUP_SECRETS.md           # Secrets setup guide
+├── AGENTS.md                   # AI agent configuration and workflows
 ├── Brewfile                   # Homebrew packages
 ├── Brewfile.lock.json         # Homebrew lock file (ignored)
 ├── .gitignore                 # Git ignore rules
@@ -149,6 +150,7 @@ Or in tmux:
 - **`PERSONAL_NOTES.md`** - Personal workflows and instructions
 - **`CHEATSHEET.md`** - Quick reference guide
 - **`SETUP_SECRETS.md`** - Detailed secrets setup guide
+- **`AGENTS.md`** - AI agent configuration and workflows
 
 ## Customization
 
@@ -238,6 +240,7 @@ This repository includes a personal notes system for storing workflows, reminder
 - **`PERSONAL_NOTES.md`** - Detailed personal workflows and instructions
 - **`CHEATSHEET.md`** - Quick reference for commands and key bindings
 - **`SETUP_SECRETS.md`** - Complete guide for secrets management
+- **`AGENTS.md`** - AI agent configuration and workflows
 
 ### Access Notes
 ```bash
@@ -247,6 +250,7 @@ notes
 # Or view directly
 bat PERSONAL_NOTES.md
 cat CHEATSHEET.md
+bat AGENTS.md
 ```
 
 ### Adding Personal Notes
