@@ -108,7 +108,6 @@ Or in tmux:
 ├── install                    # Main installation script
 ├── install.conf.yaml          # Dotbot configuration
 ├── README.md                  # This file
-├── SETUP_SECRETS.md           # Secrets setup guide
 ├── AGENTS.md                   # AI agent configuration and workflows
 ├── Brewfile                   # Homebrew packages
 ├── Brewfile.lock.json         # Homebrew lock file (ignored)
@@ -219,7 +218,6 @@ zplug update
 ### Secrets Management
 - **Never commit secrets** to version control
 - Use `~/.zshenv.local` for API keys and sensitive data
-- See `SETUP_SECRETS.md` for detailed security practices
 
 ### Git Configuration
 User details are in `gitconfig` - update with your information:
@@ -242,8 +240,6 @@ This repository includes a personal notes system for storing workflows, reminder
 notes
 
 # Or view directly
-bat PERSONAL_NOTES.md
-cat CHEATSHEET.md
 bat AGENTS.md
 ```
 
