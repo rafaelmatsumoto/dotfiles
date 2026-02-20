@@ -55,6 +55,8 @@ brew "sqlite-analyzer"
 brew "wireshark", link: false
 # Terminal UI for tshark, inspired by Wireshark
 brew "termshark"
+# Tool to build, change, and version infrastructure
+brew "terraform"
 # Code-search similar to ack
 brew "the_silver_searcher"
 # Terminal multiplexer
