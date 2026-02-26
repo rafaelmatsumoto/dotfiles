@@ -7,6 +7,9 @@ setopt autocd
 export ZPLUG_HOME="/opt/homebrew/opt/zplug"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export HOMEBREW_CASK_OPTS="--no-quarantine"
+export ATUIN_HOST="https://atuin.rafaelmatsumoto.space"
+export ATUIN_USERNAME="rafael"
+# eval "$(atuin init zsh)" moved to end of file
 
 # Aliases
 
@@ -55,6 +58,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Disable fzf's Ctrl+R to let Atuin handle it
+bindkey -r "^R"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -80,3 +85,5 @@ work() {
     # We use 'C-a' because of your specific tmux.conf mapping
     tmux new-window -n "OC-$branch_name" -c "$worktree_path" "opencode"
 }
+
+eval "$(atuin init zsh)"

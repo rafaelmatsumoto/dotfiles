@@ -57,6 +57,8 @@ brew "wireshark", link: false
 brew "termshark"
 # Tool to build, change, and version infrastructure
 brew "terraform"
+# Sync shell history across machines
+brew "atuin"
 # Code-search similar to ack
 brew "the_silver_searcher"
 # Terminal multiplexer
