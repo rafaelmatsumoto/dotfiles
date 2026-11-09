@@ -74,7 +74,7 @@ brew "zsh"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode"
+brew "anomalyco/tap/opencode-v2"
 # Scalable Web Platform by Extending NGINX with Lua
 brew "openresty/brew/openresty"
 # Ookla Speedtest
@@ -113,8 +113,6 @@ cask "shottr"
 cask "visual-studio-code"
 # Network protocol analyzer
 cask "wireshark-app"
-# Application for configuring any YubiKey
-cask "yubico-yubikey-manager"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Bear", id: 1091189122
