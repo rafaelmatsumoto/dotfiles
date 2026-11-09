@@ -32,18 +32,22 @@ else
     fi
 fi
 
+# /private/var/select/sh must point at one of the shells the macOS sh shim
+# recognises (/bin/bash, /bin/dash, /bin/zsh) -- it re-execs as that shell.
+# Homebrew's zsh path is NOT accepted, so use the system /bin/zsh here.
 SH_LINK="/private/var/select/sh"
-if [ "$(readlink "$SH_LINK")" = "$ZSH_PATH" ]; then
-    echo "✓ $SH_LINK already linked to $ZSH_PATH"
+SH_TARGET="/bin/zsh"
+if [ "$(readlink "$SH_LINK")" = "$SH_TARGET" ]; then
+    echo "✓ $SH_LINK already linked to $SH_TARGET"
 else
-    echo "Symlinking $SH_LINK to $ZSH_PATH..."
+    echo "Symlinking $SH_LINK to $SH_TARGET..."
     # -n: never prompt for a password (this script also runs non-interactively via dotbot)
-    if sudo -n ln -sf "$ZSH_PATH" "$SH_LINK" 2>/dev/null; then
-        echo "✓ $SH_LINK linked to $ZSH_PATH"
+    if sudo -n ln -sf "$SH_TARGET" "$SH_LINK" 2>/dev/null; then
+        echo "✓ $SH_LINK linked to $SH_TARGET"
     else
         echo "✗ Could not update $SH_LINK (sudo requires an interactive terminal)." >&2
         echo "  Run this manually once:" >&2
-        echo "    sudo ln -sf $ZSH_PATH $SH_LINK" >&2
+        echo "    sudo ln -sf $SH_TARGET $SH_LINK" >&2
         exit 1
     fi
 fi
