@@ -1,0 +1,9 @@
+# ~/.ssh/config — managed by dotfiles (symlinked from the dotfiles repo)
+#
+# Personal / host-specific entries live in ~/.ssh/config.d/ and are NOT
+# version controlled. Add new files there; they are pulled in below.
+
+Include ~/.ssh/config.d/*
+
+Host *
+	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"

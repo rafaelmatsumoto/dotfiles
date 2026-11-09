@@ -32,14 +32,18 @@ else
     fi
 fi
 
-if sh --version 2>/dev/null | grep -q zsh; then
-    echo "✓ /private/var/select/sh already linked to zsh"
+SH_LINK="/private/var/select/sh"
+if [ "$(readlink "$SH_LINK")" = "$ZSH_PATH" ]; then
+    echo "✓ $SH_LINK already linked to $ZSH_PATH"
 else
-    echo "Symlinking /private/var/select/sh to /bin/zsh..."
-    if sudo ln -sf /bin/zsh /private/var/select/sh; then
-        echo "✓ /private/var/select/sh linked to /bin/zsh"
+    echo "Symlinking $SH_LINK to $ZSH_PATH..."
+    # -n: never prompt for a password (this script also runs non-interactively via dotbot)
+    if sudo -n ln -sf "$ZSH_PATH" "$SH_LINK" 2>/dev/null; then
+        echo "✓ $SH_LINK linked to $ZSH_PATH"
     else
-        echo "✗ Failed to symlink /private/var/select/sh" >&2
+        echo "✗ Could not update $SH_LINK (sudo requires an interactive terminal)." >&2
+        echo "  Run this manually once:" >&2
+        echo "    sudo ln -sf $ZSH_PATH $SH_LINK" >&2
         exit 1
     fi
 fi

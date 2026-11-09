@@ -11,6 +11,9 @@ config/secrets/
 # Keep the template versioned, but ignore any actual secret files
 !.zshenv.local.template
 
+# Personal SSH host entries (managed via ~/.ssh/config.d/)
+config/ssh/config.d/
+
 # macOS
 .DS_Store
 ._*
