@@ -1,0 +1,7 @@
+# Trusted SSH commit signers.
+# Public keys only — safe to commit. Lets `git verify-commit` and `git log %G?`
+# validate SSH signatures locally instead of erroring on a missing
+# allowedSignersFile.
+#
+# Format: <principal> <key type> <key> [comment]
+37717679+rafaelmatsumoto@users.noreply.github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFsWqYp0QoV3/u2f8Ys5AeNHArEBYzBMOphBk24j0Hzj GitHub

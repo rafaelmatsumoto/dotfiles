@@ -10,6 +10,7 @@
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
     ~/.ssh/config: config/ssh/config
+    ~/.config/git/allowed_signers: config/git/allowed_signers
     ~/.tmux:
       create: true
       path: tmux

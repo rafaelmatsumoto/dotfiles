@@ -187,12 +187,8 @@ Based on your dotfiles configuration, here are some identified preferences and w
 
 ### Security & Secrets
 
-- **Password Manager**: 1Password with SSH agent integration
-- **Secrets Management**: `~/.zshenv.local` for environment variables (see `.zshenv.local.template`)
-- **Git Security**: `gitleaks` for secret scanning, wired as a `pre-commit` hook via `.pre-commit-config.yaml` (runs on every `git commit`)
-- **SSH Agent**: 1Password container socket (`~/.zshenv:26`)
-- **SSH Config**: `~/.ssh/config` is a symlink to `config/ssh/config`; personal host entries live in `~/.ssh/config.d/` and are **not** version controlled
-- **OpenCode Credentials**: `~/.config/opencode/service.json` holds the local background-service password and `opencode auth export` contains provider secrets — neither is ever committed (both live outside the repo)
+- **Never commit secrets.** Personal credentials belong in `~/.zshenv.local`, which is gitignored. Copy `.zshenv.local.template` and fill it in — `./setup_secrets.zsh` does this for you.
+- **Pre-commit scanning**: `gitleaks` runs on every commit via `.pre-commit-config.yaml` and blocks the commit on a match.
 
 ### Terminal & UI Preferences
 
