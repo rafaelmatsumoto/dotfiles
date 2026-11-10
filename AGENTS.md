@@ -32,7 +32,7 @@ The primary interface to OpenCode is through the `work()` function defined in `z
 ```bash
 work() {
     local branch_name=$1
-    # This puts worktrees in a folder next to your main '[redacted]' folder
+    # This puts worktrees in a sibling 'worktrees/' folder next to the main repo
     local worktree_path="../worktrees/$branch_name"
 
     if [ -z "$branch_name" ]; then

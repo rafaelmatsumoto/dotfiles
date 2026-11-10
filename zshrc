@@ -68,7 +68,7 @@ export NVM_DIR="$HOME/.nvm"
 # Git Worktree + Tmux Orchestrator
 work() {
     local branch_name=$1
-    # This puts worktrees in a folder next to your main '[redacted]' folder
+    # This puts worktrees in a sibling 'worktrees/' folder next to the main repo
     local worktree_path="../worktrees/$branch_name"
 
     if [ -z "$branch_name" ]; then
