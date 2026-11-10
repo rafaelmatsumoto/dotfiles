@@ -32,23 +32,23 @@ else
     fi
 fi
 
-# /private/var/select/sh must point at one of the shells the macOS sh shim
-# recognises (/bin/bash, /bin/dash, /bin/zsh) -- it re-execs as that shell.
-# Homebrew's zsh path is NOT accepted, so use the system /bin/zsh here.
+# /private/var/select/sh decides what /bin/sh re-execs as. The macOS sh shim
+# only recognises /bin/bash, /bin/dash and /bin/zsh -- Homebrew's zsh path is
+# not accepted.
+#
+# This link is owned by macOS Directory Services and gets reset to /bin/bash
+# when the service reconciles, so treat it as best effort: it is a cosmetic
+# convenience and must never fail the dotbot install. The login shell set
+# above via `chsh` is the part that actually matters.
 SH_LINK="/private/var/select/sh"
 SH_TARGET="/bin/zsh"
 if [ "$(readlink "$SH_LINK")" = "$SH_TARGET" ]; then
     echo "✓ $SH_LINK already linked to $SH_TARGET"
+elif sudo -n ln -sf "$SH_TARGET" "$SH_LINK" 2>/dev/null; then
+    echo "✓ $SH_LINK linked to $SH_TARGET"
 else
-    echo "Symlinking $SH_LINK to $SH_TARGET..."
-    # -n: never prompt for a password (this script also runs non-interactively via dotbot)
-    if sudo -n ln -sf "$SH_TARGET" "$SH_LINK" 2>/dev/null; then
-        echo "✓ $SH_LINK linked to $SH_TARGET"
-    else
-        echo "✗ Could not update $SH_LINK (sudo requires an interactive terminal)." >&2
-        echo "  Run this manually once:" >&2
-        echo "    sudo ln -sf $SH_TARGET $SH_LINK" >&2
-        exit 1
-    fi
+    echo "→ $SH_LINK points to $(readlink "$SH_LINK" 2>/dev/null || echo 'unset'); macOS may reset it."
+    echo "  To make /bin/sh use zsh, run once:"
+    echo "    sudo ln -sf $SH_TARGET $SH_LINK"
 fi
 
