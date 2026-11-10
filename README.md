@@ -5,7 +5,7 @@ Personal dotfiles managed with [dotbot](https://github.com/anishathalye/dotbot).
 ## Quick Start
 
 ### Prerequisites
-- macOS (tested on macOS Sonoma 14+)
+- macOS (tested on macOS 14+)
 - Git
 - Zsh (installed by default on macOS)
 
@@ -40,6 +40,8 @@ Personal dotfiles managed with [dotbot](https://github.com/anishathalye/dotbot).
 - `~/.zshenv` - Environment variables and utility functions
 - `~/.gitconfig` - Git configuration with user details
 - `~/.tmux.conf` - Tmux configuration with TPM plugin manager
+- `~/.ssh/config` - SSH configuration (personal hosts live in `~/.ssh/config.d/`)
+- `~/.config/git/allowed_signers` - Trusted commit signers for local signature verification
 - `~/.config/bat/config` - Bat (cat clone) configuration
 - `~/.config/nvim/` - Neovim configuration
 - `~/.config/iterm2-config/` - iTerm2 configuration
@@ -57,6 +59,8 @@ All packages are defined in `Brewfile` and installed via `brew bundle`:
   - zsh-syntax-highlighting
   - zsh-vi-mode
 - **zsh-autosuggestions** via Homebrew
+- **Atuin** for shell history, synced to a self-hosted server. Fuzzy-search
+  your history with `Ctrl+R` (Atuin takes over from fzf).
 
 ## Automated Setup
 
@@ -116,7 +120,9 @@ Or in tmux:
 │
 ├── config/                    # Application configurations
 │   ├── bat/config             # Bat configuration
+│   ├── git/allowed_signers    # Trusted commit signers (public keys only)
 │   ├── nvim/                  # Neovim configuration
+│   ├── ssh/config             # SSH configuration (tracked)
 │   └── iterm2-config/         # iTerm2 configuration
 │
 ├── dotbot/                    # Dotbot submodule
@@ -136,6 +142,8 @@ Or in tmux:
 - **`zshenv`** - Environment setup with secrets loading
 - **`gitconfig`** - Git user configuration
 - **`tmux.conf`** - Tmux key bindings and plugin configuration
+- **`config/ssh/config`** - Tracked SSH configuration; personal host entries go in `~/.ssh/config.d/` (gitignored)
+- **`config/git/allowed_signers`** - Public keys trusted to sign commits, so `git verify-commit` works locally
 
 ### Setup Scripts
 - **`setup_homebrew.zsh`** - Installs Homebrew and packages
@@ -146,6 +154,7 @@ Or in tmux:
 
 ### Templates & Documentation
 - **`.zshenv.local.template`** - Template for personal secrets (API keys, etc.)
+- **`.pre-commit-config.yaml`** - Pre-commit hooks (gitleaks secret scanning)
 - **`AGENTS.md`** - AI agent configuration and workflows
 
 ## Customization
@@ -218,6 +227,20 @@ zplug update
 ### Secrets Management
 - **Never commit secrets** to version control
 - Use `~/.zshenv.local` for API keys and sensitive data
+- `gitleaks` runs on every commit via a `pre-commit` hook and blocks the commit on a match
+
+### SSH Configuration
+`~/.ssh/config` is a symlink to the tracked `config/ssh/config`. Personal
+host entries belong in `~/.ssh/config.d/` — that directory is gitignored, so
+hostnames and infrastructure details never reach the repository.
+
+### Commit Signing
+Commits are signed with an SSH key (`gpg.format = ssh`), using 1Password's
+`op-ssh-sign` as the signing program. The private key stays in 1Password;
+only the public key is stored in `gitconfig`, which is safe to publish.
+
+`config/git/allowed_signers` lists the trusted public keys so that
+`git verify-commit` and `git log %G?` can validate signatures locally.
 
 ### Git Configuration
 User details are in `gitconfig` - update with your information:
