@@ -16,7 +16,7 @@ export ATUIN_USERNAME="rafael"
 alias l='eza -la --classify --git'
 alias vim='nvim'
 alias cat="bat"
-alias bbd='brew bundle dump --force --describe --verbose'
+alias bbd='brew bundle dump --force --verbose'
 alias trail='<<<${(F)path}'
 alias notes='~/.dotfiles/scripts/notes'
 
