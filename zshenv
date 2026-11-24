@@ -24,3 +24,14 @@ if [[ -f ~/.zshenv.$(hostname -s) ]]; then
 fi
 
 export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
+# Never let `brew bundle` upgrade casks.
+# ============================================================
+# The cask upgrade path moves the app into /Applications with sudo. In a
+# non-interactive shell (dotbot runs the install that way) the sudo prompt
+# fails, which leaves the app DELETED from /Applications and a stale
+# *.upgrading directory in the Caskroom. Auto-updating casks (Chrome,
+# Discord, ...) update themselves anyway.
+# Use `brew bundle --upgrade` to opt back in, or `brew upgrade` directly.
+export HOMEBREW_BUNDLE_NO_UPGRADE=1
+

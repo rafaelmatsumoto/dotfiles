@@ -201,6 +201,22 @@ zplug "username/plugin", from:github
 ### Git Issues
 - **`.DS_Store` files appearing**: They're ignored by `.gitignore` but can be removed with `find . -name ".DS_Store" -delete`
 
+### A Cask Disappeared After `./install`
+This should not happen — `brew bundle` runs with `--no-upgrade` (and
+`HOMEBREW_BUNDLE_NO_UPGRADE=1` is exported from `zshenv`) precisely to
+prevent it. Upgrading a cask moves the app into `/Applications` with `sudo`;
+run non-interactively that prompt fails, leaving the app deleted and a
+stale `*.upgrading` directory in `/opt/homebrew/Caskroom/<cask>/`.
+
+If you hit it anyway, the fix is to reinstall the cask:
+
+```bash
+brew uninstall --cask --force <cask>
+brew install --cask <cask>
+```
+
+The reinstall works without `sudo` — only the *upgrade* path needs it.
+
 ## Updating
 
 ### Update Dotfiles
