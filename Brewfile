@@ -65,43 +65,43 @@ brew "hashicorp/tap/terraform"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
 # Password manager that keeps all passwords secure behind one password
-cask "1password"
+cask "1password", pin: true
 # Command-line interface for 1Password
 cask "1password-cli"
 # Application launcher and productivity software
-cask "alfred"
+cask "alfred", pin: true
 # Voice and text chat software
-cask "discord"
+cask "discord", pin: true
 # App to build and share containerised applications and microservices
-cask "docker-desktop"
+cask "docker-desktop", pin: true
 # Web browser
-cask "google-chrome"
+cask "google-chrome", pin: true
 # Hex editor focussing on speed
-cask "hex-fiend"
+cask "hex-fiend", pin: true
 # HTTP and GraphQL Client
-cask "insomnia"
+cask "insomnia", pin: true
 # Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
+cask "iterm2", pin: true
 # JetBrains tools manager
-cask "jetbrains-toolbox"
+cask "jetbrains-toolbox", pin: true
 # Provides updates to various Microsoft products
-cask "microsoft-auto-update"
+cask "microsoft-auto-update", pin: true
 # Multi-platform web browser
-cask "microsoft-edge"
+cask "microsoft-edge", pin: true
 # Email client
-cask "microsoft-outlook"
+cask "microsoft-outlook", pin: true
 # Move and resize windows using keyboard shortcuts or snap areas
-cask "rectangle"
+cask "rectangle", pin: true
 # Screenshot measurement and annotation tool
-cask "shottr"
+cask "shottr", pin: true
 # Open-source code editor
-cask "visual-studio-code"
+cask "visual-studio-code", pin: true
 # Network protocol analyzer
-cask "wireshark-app"
+cask "wireshark-app", pin: true
 # Full-featured companion app to the YubiKey
 cask "yubico-authenticator"
 # Video communication and virtual meeting platform
-cask "zoom"
+cask "zoom", pin: true
 mas "Bear", id: 1091189122
 mas "Day One", id: 1055511498
 mas "GarageBand", id: 682658836

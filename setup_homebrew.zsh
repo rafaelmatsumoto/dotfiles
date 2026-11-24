@@ -19,13 +19,12 @@ else
 fi
 
 echo "Installing packages from Brewfile..."
-# --no-upgrade is essential: without it `brew bundle` upgrades casks that
-# Homebrew considers outdated, and the cask upgrade path needs sudo to move
-# the app into /Applications. Run non-interactively (as dotbot does) that
-# sudo prompt fails, leaving the app DELETED and a stale *.upgrading dir in
-# the Caskroom. This bit Google Chrome and Discord.
-# Auto-updating casks update themselves; formulae are upgraded on demand
-# with `brew upgrade`.
+# --no-upgrade keeps the bootstrap idempotent: it installs what the Brewfile
+# specifies without also upgrading anything. The self-updating casks are
+# pinned in the Brewfile, so `brew bundle` never moves them into
+# /Applications -- that path needs sudo, and a non-interactive sudo prompt
+# fails, which would leave the app deleted from /Applications.
+# Upgrade on demand with `brew upgrade`.
 if brew bundle --no-upgrade --verbose; then
     echo "✓ Brew bundle completed successfully"
 else
